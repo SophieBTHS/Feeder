@@ -16,8 +16,14 @@ public class Feeder {
      * feeder, as described in part (a) Precondition: numBirds > 0
      */
     public void simulateOneDay(int numBirds){
-        if (Math.random() * 20)
-    }
+        if (Math.random() * 20 > 19) currentFood = 0;
+        else{
+            int eaten = (int)(Math.random() * 41) + 10;
+            eaten *= numBirds;
+            currentFood -= eaten;
+            if (currentFood < 0) currentFood = 0;
+            }
+        }
 
     /**
      * Returns the number of days birds or a bear found food to eat at the
